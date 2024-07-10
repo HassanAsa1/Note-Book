@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        font-family: sans-serif;
+        
+    }
+    body{
+       margin: 0;
+    }
+.alldiv{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.taskblock{
+    width: 80%;
+    height: auto;
+    padding: 15px;
+    background-color:white;
+    box-shadow: 0 0 15px gray;
+    margin-top: 50px;
+}
+input{
+    width: 100%;
+    height: 36px;
+    border: solid gray;
+    border-top: none;border-left: none;border-right: none;
+    font-size: 22px;
+}
+.task{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+button{
+    cursor: pointer;
+    margin-top: 30px;margin-bottom: 40px;
+    border-radius: 4px;
+    width:90px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(56, 157, 142);
+    transition: 0.5s;
+}
+button:hover{transition: 1s;
+    background-color: rgb(39, 105, 95);
+}
+.thetask{
+    border-bottom: solid white;
+    padding: 10px;
+    color: white;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    margin: auto;
+    background-color:rgb(56, 157, 142) ;
+    font-size: 23px;
+}
+.thetask p{
+    cursor: pointer;
+}
+.c{
+    width: 90%;
+    margin: auto;
+}
+nav{
+    background-color: rgb(56, 157, 142);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+nav h1{
+    padding-left:  20px ;
+    padding-right: 20px;
+}
+.night{
+    background-color: rgb(2, 2, 28);
+}
+.white{
+    color: white;
+}
+.jj{
+    color: rgb(175, 173, 173);
+}
+.jj::after{
+   content: '✅';
+}
+.bwhite{
+    background-color: white;
+    color: black;
+}
+.cl-toggle-switch {
+ position: relative;
+}
+
+.cl-switch {
+ position: relative;
+ display: inline-block;
+}
+/* Input */
+.cl-switch > input {
+ appearance: none;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ z-index: -1;
+ position: absolute;
+ right: 6px;
+ top: -8px;
+ display: block;
+ margin: 0;
+ border-radius: 50%;
+ width: 40px;
+ height: 40px;
+ background-color: rgb(0, 0, 0, 0.38);
+ outline: none;
+ opacity: 0;
+ transform: scale(1);
+ pointer-events: none;
+ transition: opacity 0.3s 0.1s, transform 0.2s 0.1s;
+}
+/* Track */
+.cl-switch > span::before {
+ content: "";
+ float: right;
+ display: inline-block;
+ margin: 5px 0 5px 10px;
+ border-radius: 7px;
+ width: 36px;
+ height: 14px;
+ background-color: rgb(0, 0, 0, 0.38);
+ vertical-align: top;
+ transition: background-color 0.2s, opacity 0.2s;
+}
+/* Thumb */
+.cl-switch > span::after {
+ content: "";
+ position: absolute;
+ top: 2px;
+ right: 16px;
+ border-radius: 50%;
+ width: 20px;
+ height: 20px;
+ background-color: #fff;
+ box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+ transition: background-color 0.2s, transform 0.2s;
+}
+/* Checked */
+.cl-switch > input:checked {
+ right: -10px;
+ background-color: #85b8b7;
+}
+
+.cl-switch > input:checked + span::before {
+ background-color: #85b8b7;
+}
+
+.cl-switch > input:checked + span::after {
+ background-color: #018786;
+ transform: translateX(16px);
+}
+/* Hover, Focus */
+.cl-switch:hover > input {
+ opacity: 0.04;
+}
+
+.cl-switch > input:focus {
+ opacity: 0.12;
+}
+
+.cl-switch:hover > input:focus {
+ opacity: 0.16;
+}
+/* Active */
+.cl-switch > input:active {
+ opacity: 1;
+ transform: scale(0);
+ transition: transform 0s, opacity 0s;
+}
+
+.cl-switch > input:active + span::before {
+ background-color: #8f8f8f;
+}
+
+.cl-switch > input:checked:active + span::before {
+ background-color: #85b8b7;
+}
+/* Disabled */
+.cl-switch > input:disabled {
+ opacity: 0;
+}
+
+.cl-switch > input:disabled + span::before {
+ background-color: #ddd;
+}
+
+.cl-switch > input:checked:disabled + span::before {
+ background-color: #bfdbda;
+}
+
+.cl-switch > input:checked:disabled + span::after {
+ background-color: #61b5b4;
+}
+#X{
+    color: rgb(174, 76, 41);
+}
+</style>
+<body id="b">
+    <nav><h1>HN.EN</h1><a  style="color:white; text-decoration: none" href="https://t.me/hasanasa1"><h1>help</h1></a></nav>
+    <div class="alldiv">
+        <div id="taskb" class="taskblock">
+            <div class="cl-toggle-switch">
+                <label class="cl-switch">
+                  <input id="modebtn" type="checkbox">
+                  <span></span>
+                </label>
+              </div>
+        <div class="task">
+        <h1>📝Task List</h1>
+        <label for=""><p>next task</p></label>
+        <input id="inputtask" type="text">
+        <button id="addtask">ADD TASK</button>
+        </div>
+        <hr>
+        <div class="task">
+        <h1>Tasks</h1>
+        <input id="search" onkeyup="Search(this.value)" style="margin-bottom: 10px;" type="text" placeholder="Find taskes">
+        </div>
+        <div id="task" >
+
+        </div>
+        <div class="c">
+        <button id="clearall" style="width: 120px;">CLEAR TASKS</button>
+        </div>
+    </div>
+    </div>
+</body>
+<script>
+     var addtask=document.getElementById("addtask");
+     var task=document.getElementById("task");
+     var inputtask=document.getElementById("inputtask");
+     var clearall=document.getElementById("clearall");
+     var word=document.getElementById("word");
+     var search=document.getElementById("search");
+    let Array;
+    if(localStorage.localobject!=null) //important  its out of functions because localstorage is updating all time
+    {
+        Array=JSON.parse(localStorage.localobject);
+    }
+    else{
+        Array=[];
+    }
+    addtask.onclick=function creat(){
+    if(inputtask.value!='')
+    {
+    Array.push(inputtask.value);
+    inputtask.value='';
+    show();
+    localStorage.setItem('localobject',JSON.stringify(Array));//when create array dirctly save it in local
+    }
+}
+function show(){
+    let showtask=``;
+    for(let i=0;i<Array.length;i++)
+    {
+    showtask+=`<div class="thetask"><p id="${i}" onclick="Done(id)">${Array[i]}</p><p id="X" onclick="Cleantask(${i})">X</p></div>`;//+ in loop to save and show all array
+    }
+    task.innerHTML=showtask;
+   }
+    function Cleantask(i){
+    Array.splice(i,1);
+    localStorage.localobject=JSON.stringify(Array)
+    show();
+    }
+    clearall.onclick=function Clearall(){
+        let result=confirm("Are You Sure")
+        if(result)//if true
+        {
+        Array.splice(0);
+        localStorage.clear();
+        show();
+        }
+    }
+    show();
+    function Search(value){
+    let showtask=``;
+    for(let i=0;Array.length>i;i++)
+    {
+        if(Array[i].includes(value))
+    {
+        showtask+=`<div class="thetask"><p id="${i}" onclick="Done(id)">${Array[i]}</p><p id="X" onclick="Cleantask(${i})">X</p></div>`;//+ in loop to save and show all array
+    }
+    task.innerHTML=showtask;
+    }
+    }
+    function Done(id){
+     document.getElementById(id).classList.toggle("jj")
+    }
+    var mode=document.getElementById("modebtn");
+    var body=document.getElementById("b");
+    var taskb=document.getElementById("taskb");
+    mode.onclick=function TRUE()
+    {
+     body.classList.toggle("night");
+     taskb.classList.toggle("night");
+     taskb.classList.toggle("white");
+     clearall.classList.toggle("bwhite")
+    }
+    </script>
+</html>
